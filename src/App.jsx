@@ -117,7 +117,6 @@ const App = () => {
         start: "top 90%",
         end: "top 40%",
         scrub: 4,
-        markers: true,
      }
      })
   
@@ -228,9 +227,6 @@ const App = () => {
         <img id='comma' className='h-[50px] absolute left-[220px] top-[-5px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
         <p className='text-white text-center w-[50%] font-extrabold text-2xl'>Excellent couple of hours, relax and enjoy in the fun. Staff were accommodating, friendly and very helpful. Café on site for refreshments etc. Will keep children enterntained during the holidays. Worth a visit if you haven’t been.</p>
         <img className='h-[50px] absolute right-[140px] bottom-[20px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
-      </div>
-      <div className='py-11 h-[600px] bg-[#89B11B]'>
-
       </div>
     </div>
   );

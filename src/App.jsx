@@ -55,8 +55,9 @@ const App = () => {
     gsap.from("#card , #card1", {
       opacity: 0,
       y: 100, 
-      duration: 1.5,
+      duration: 1,
       stagger: 1,
+      scale: 0.8,
       scrollTrigger:{
         trigger: "#card",
         start: "top 80%",
@@ -64,6 +65,61 @@ const App = () => {
         scrub: 3,
       }
     })
+     gsap.from("#sign", {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scale: 0.8,
+      scrollTrigger:{
+        trigger: "#sign",
+        start: "top 100%",
+        end: "top 70%",
+        scrub: 3,
+
+      }
+     })
+     gsap.from( "#foodimg", {
+      opacity: 0,
+      x: -600,
+      duration: 1,
+      scale: 0.8,
+      scrollTrigger:{
+        trigger: "#foodimg",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: 3,
+      }
+     })
+     gsap.from("#foodtext", {
+      opacity: 0,
+      right: -600,
+      duration: 1,
+      scale: 0.8,
+      scrollTrigger:{
+        trigger: "#foodtext",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: 3,
+      } 
+     })
+     gsap.from("#comma", {
+      marginTop: 100,
+     marginLeft: 100,
+      opacity: 0,
+      rotate: 300,
+      duration: 1,
+      scale: 0.8,
+      markers: true,
+      start: "top 100%",
+      end: "top 40%",
+      scrollTrigger:{
+        trigger: "#comma",
+        start: "top 90%",
+        end: "top 40%",
+        scrub: 4,
+        markers: true,
+     }
+     })
   
   }, []);
 
@@ -147,6 +203,34 @@ const App = () => {
          <p className='opacity-0 text-xl text-center capitalize text-black font-montserrat'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla quam molestias magni cupiditate architecto et enim quas facere ipsum tempora?</p>
          </div>
         </div>
+      </div>
+      <div className='h-[200px] bg-[#89B11B]'>
+        <div className='flex h-full justify-between items-center'>
+        <img className='h-full' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt=""  />
+        <h4 id='sign' className='text-3xl text-center font-semibold font-montserrat w-[50%]'>
+          SIGN UP FOR SIDCUP NEWS AND SPECIAL OFFERS STRAIGHT TO YOUR INBOX
+        </h4>
+        <img  className='h-full' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt="" />
+        </div>
+      </div>
+      <div className=' flex justify-center items-center gap-x-10 px-20 py-10'>
+        <img  id='foodimg' className='h-[450px] w-[500px] rounded-xl object-cover' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-5-1002x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1" alt="" />
+        <div id='foodtext' className='w-[50%] text-white flex flex-col capitalize justify-center gap-y-10 items-start'>
+        <h3 className='text-4xl font-semibold'>Food And Drink</h3>
+        <p className='text-[17px] text-start font-light font-mono'>Whether you’re getting ready to play, just finishing your practice session or feeling peckish on the range,
+          we have a variety of food and drink options bought directly to your table or bay.
+
+          We make sure that we cater for everyone, offering a range of vegan and gluten free options.</p>
+        <button type="button" className='py-2 px-4 capitalize border-4 hover:text-black font-semibold hover:scale-95 hover:bg-[#91B508] border-[#91B508] text-xl rounded-full'>coffee Shop</button>
+        </div>
+      </div>
+      <div className='flex justify-center py- items-center relative h-[500px]'>
+        <img id='comma' className='h-[50px] absolute left-[220px] top-[-5px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
+        <p className='text-white text-center w-[50%] font-extrabold text-2xl'>Excellent couple of hours, relax and enjoy in the fun. Staff were accommodating, friendly and very helpful. Café on site for refreshments etc. Will keep children enterntained during the holidays. Worth a visit if you haven’t been.</p>
+        <img className='h-[50px] absolute right-[140px] bottom-[20px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
+      </div>
+      <div className='py-11 h-[600px] bg-[#89B11B]'>
+
       </div>
     </div>
   );

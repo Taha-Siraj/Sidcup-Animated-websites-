@@ -8,6 +8,7 @@ body{
   width: 100%;
 }
 body::-webkit-scrollbar{
+  scroll-behavior: smooth;
   display: block;
   width: 8px;
   background-color: #89B11B;
@@ -114,4 +115,5 @@ video {
   object-fit: cover;
   z-index: -1;
   position: fixed;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
 }

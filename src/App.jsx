@@ -121,11 +121,9 @@ const App = () => {
       transitionDelay: 1,
       
      })
-     gsap.from("#comma", {
-      marginTop: 100,
-     marginLeft: 100,
-      opacity: 0,
-      rotate: 300,
+     gsap.to("#comma", {
+      y: 100,
+     x: 100,
       duration: 1,
       scale: 0.8,
       markers: true,
@@ -138,7 +136,42 @@ const App = () => {
         scrub: 4,
      }
      })
-  
+     gsap.to("#comma2", {
+      y: -100,
+     x: -100,
+      duration: 1,
+      scale: 0.8,
+      markers: true,
+      start: "top 100%",
+      end: "top 40%",
+      scrollTrigger:{
+        trigger: "#comma",
+        start: "top 90%",
+        end: "top 40%",
+        scrub: 4,
+     }
+     })
+     gsap.to("#textls", {
+      y: -80,
+      duration:1,
+      scale: 1.1,
+      scrollTrigger:{
+        trigger: "#textls",
+        start: "top 100%",
+        end: "top 40%",
+        scrub: 3,
+      }
+     })
+     gsap.to("#lsimg1", {
+      y: -40,
+      duration: 1,
+      scrollTrigger:{
+        trigger: "#lsimg1",
+        start: "top 100%",
+        end: "top 40%",
+        scrub: 3,
+      }
+     })
   }, []);
   return (
     <div className='font-montserrat capitalize'>
@@ -146,11 +179,11 @@ const App = () => {
         <header className='z-10 px-10 gap-x-4 py-4 flex justify-start items-center w-full'>
           <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
           <div id='menu' className='flex gap-x-5 uppercase'>
-            <h2 className='text-[17px] cursor-pointer text-white'>TOPTRACER RANGE</h2>
-            <h2 className='text-[17px] cursor-pointer text-white'>Golf Lessons</h2>
-            <h2 className='text-[17px] cursor-pointer text-white'>Adventure Golf</h2>
-            <h2 className='text-[17px] cursor-pointer text-white'>coffee shop</h2>
-            <h2 className='text-[17px] cursor-pointer text-white'>leagues</h2>
+            <h2 className='text-[16px] cursor-pointer text-white'>TOPTRACER RANGE</h2>
+            <h2 className='text-[16px] cursor-pointer text-white'>Golf Lessons</h2>
+            <h2 className='text-[16px] cursor-pointer text-white'>Adventure Golf</h2>
+            <h2 className='text-[16px] cursor-pointer text-white'>coffee shop</h2>
+            <h2 className='text-[16px] cursor-pointer text-white'>leagues</h2>
           </div>
         <div id='btn' className='flex gap-x-5'>
         <button  className= 'capitalize bg-black text-white py-2 px-5 rounded-full border-[4px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book range</button>
@@ -185,13 +218,13 @@ const App = () => {
         </marquee>
       </div>
 
-      <div className='h-[70%] aboutspages py-20 text-white flex justify-between items-center gap-x-5 px-20'>
+      <div className='h-[70%] aboutspages py-20 text-white flex justify-center items-center gap-x-10 px-10'>
         <div className='aboutimg'>
           <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1" alt="" className='w-[220px] rounded-xl' />
         </div>
         <div id='abouttext' className='w-[50%] text-center flex flex-col gap-y-4'>
           <h1 className='text-5xl font-extrabold uppercase'>About US</h1>
-          <p>
+          <p className='text-xl'>
             Home to a 46-bay, multi-tier, floodlit driving range, powered by Toptracer Range technology.
             Complimented by a practice green and bunker, coffee shop and American Golf Store.
             There truly is something for everyone as we also boast two outdoor 18-hole dinosaur themed crazy golf courses.
@@ -241,11 +274,44 @@ const App = () => {
         <button type="button" className='py-2 px-4 capitalize border-4 hover:text-black font-semibold hover:scale-95 hover:bg-[#91B508] border-[#91B508] text-xl rounded-full'>coffee Shop</button>
         </div>
       </div>
-      <div className='flex justify-center py- items-center relative h-[500px]'>
-        <img id='comma' className='h-[50px] absolute left-[220px] top-[-5px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
+      <div className='flex justify-center items-center relative h-[400px]'>
+        <img id='comma' className='h-[50px] absolute left-[150px] top-[-50px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
         <p className='text-white text-center w-[50%] font-extrabold text-2xl'>Excellent couple of hours, relax and enjoy in the fun. Staff were accommodating, friendly and very helpful. Café on site for refreshments etc. Will keep children enterntained during the holidays. Worth a visit if you haven’t been.</p>
-        <img className='h-[50px] absolute right-[140px] bottom-[20px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
+        <img id='comma2' className='h-[50px] absolute right-[160px] bottom-[-40px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
       </div>
+      <div className='flex justify-center items-center relative py-10'>
+        <h1 id='textls' className='z-[-1] top-[20px]  absolute   text-[65px] font-extrabold  text-center text-black' >WHAT ARE YOU WAITING FOR?</h1>
+        <div className='px-20 flex justify-center items-center gap-x-20'>
+          <div id='lsimg1' className='h-[170px] w-[300px] rounded-xl flex justify-center items-center bg-[#89B11B]'>
+           <h1 className='text-3xl font-semibold'>TopRacer Range</h1>
+          </div>
+          <div id='lsimg1' className='h-[170px] w-[300px] rounded-xl flex justify-center items-center bg-[#89B11B]'>
+           <h1 className='text-3xl font-semibold'>TopRacer Range</h1>
+          </div>
+          <div id='lsimg1' className='h-[170px] w-[300px] rounded-xl flex justify-center items-center bg-[#89B11B]'>
+           <h1 className='text-3xl font-semibold'>TopRacer Range</h1>
+          </div>
+        </div>
+      </div>
+      <footer className='bg-[#89B11B] h-[220px] gap-y-10 flex px-10  justify-center items-center flex-col'>
+       <div className='flex justify-between items-center px-10 w-full'>
+       <div>
+        <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
+        </div>
+        <div id='menu' className='flex gap-x-5 uppercase flex-col justify-center items-start '>
+            <h2 className='text-[26px] hover:text-white transition-all ease-in-out  text-black font-extrabold cursor-pointer'>TOPTRACER RANGE</h2>
+            <h2 className='text-[26px] hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Crazy Golf</h2>
+            <h2 className='text-[26px]  hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer'>Café
+            Golf</h2> 
+          </div>
+          <div>
+          <h2 className='text-[26px]  hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Events</h2>
+            <h2 className='text-[26px] hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Golf Lessons</h2>
+            <h2 className='text-[26px]  hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Contact Us</h2>
+          </div>
+       </div>
+          <p className='text-xl font-light font-mono text-[#353535] text-center'>Copyright © 2025 Taha Siraj. All rights reserved.</p>
+      </footer>
     </div>
   );
 };

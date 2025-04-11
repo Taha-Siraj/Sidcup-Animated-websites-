@@ -186,7 +186,6 @@ const App = () => {
   }, []);
 
   let cursorref = useRef(null)
-
   useEffect(() => {
     const mouseMove = (e) => {
       cursorref.current.style.left = `${e.pageX}px`;
@@ -223,7 +222,7 @@ const App = () => {
             Sidcup Family Golf is a Toptracer driving range and crazy golf venue in Sidcup, South East London.
             Passionate about technology, player development, and making golf fun and accessible to everyone.
           </p>
-          <div ref={cursorref} className='fixed top-0 left-0 right-0 bg-[#89B11B] h-6 w-6   rounded-full'>
+          <div ref={cursorref} className='absolute top-0 left-0 right-0 bg-[#89B11B] h-6 w-6   rounded-full'>
 
           </div>
         </div>

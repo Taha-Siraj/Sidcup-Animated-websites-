@@ -80,7 +80,7 @@ const App = () => {
      })
      gsap.from( "#foodimg", {
       opacity: 0,
-      x: -600,
+      x: -100,
       duration: 1,
       scale: 0.8,
       scrollTrigger:{
@@ -92,15 +92,34 @@ const App = () => {
      })
      gsap.from("#foodtext", {
       opacity: 0,
-      right: -600,
+      x: 100,
       duration: 1,
-      scale: 0.8,
       scrollTrigger:{
         trigger: "#foodtext",
         start: "top 80%",
         end: "top 60%",
         scrub: 3,
       } 
+     })
+     let tl = gsap.timeline()
+     tl.from("#logo", {
+      opacity: 0,
+      y: -200,
+      duration: 0.4,
+     })
+     tl.from("#menu h2", {
+      opacity: 0,
+      stagger: 1,
+      y: -200,
+      duration: 0.5,
+     })
+     gsap.from("#btn button", {
+      opacity: 0,
+      stagger: 1,
+      x: 400,
+      duration: 0.6,
+      transitionDelay: 1,
+      
      })
      gsap.from("#comma", {
       marginTop: 100,
@@ -121,26 +140,26 @@ const App = () => {
      })
   
   }, []);
-
   return (
     <div className='font-montserrat capitalize'>
       <div className="relative h-screen w-full">
-        <header className='z-10 px-20 py-4 flex justify-between items-center w-full'>
-          <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
-          <div className='flex gap-x-5 uppercase'>
+        <header className='z-10 px-10 gap-x-4 py-4 flex justify-start items-center w-full'>
+          <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
+          <div id='menu' className='flex gap-x-5 uppercase'>
             <h2 className='text-[17px] cursor-pointer text-white'>TOPTRACER RANGE</h2>
             <h2 className='text-[17px] cursor-pointer text-white'>Golf Lessons</h2>
             <h2 className='text-[17px] cursor-pointer text-white'>Adventure Golf</h2>
             <h2 className='text-[17px] cursor-pointer text-white'>coffee shop</h2>
             <h2 className='text-[17px] cursor-pointer text-white'>leagues</h2>
           </div>
-          <button className= 'capitalize bg-black text-white py-2 px-5 rounded-full border-[4px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book range</button>
-          <button className='capitalize bg-black text-white py-2 px-5 rounded-full border-[5px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book golf</button>
+        <div id='btn' className='flex gap-x-5'>
+        <button  className= 'capitalize bg-black text-white py-2 px-5 rounded-full border-[4px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book range</button>
+        <button className='capitalize bg-black text-white py-2 px-5 rounded-full border-[5px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book golf</button>
+        </div>
         </header>
 
         <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]" src="/hero.mp4" autoPlay loop muted playsInline />
-
-        <div className='flex flex-col h-screen gap-y-6 py-4 justify-start items-center'>
+        <div className='flex flex-col h-screen justify-start gap-20  items-center'>
           <h1 id='custom-stroke'>Eat.Drink.Play.</h1>
           <h2 className='text-[35px] text-white font-semibold'>Welcome to Sidcup Family Golf!</h2>
           <p className='text-xl text-white text-center w-[40%]'>
@@ -149,7 +168,6 @@ const App = () => {
           </p>
         </div>
       </div>
-
       <div>
         <marquee className='py-10'>
           <div id='scroller' className='flex text-8xl text-black font-extrabold gap-x-2 uppercase'>
@@ -166,7 +184,7 @@ const App = () => {
           </div>
         </marquee>
       </div>
-      
+
       <div className='h-[70%] aboutspages py-20 text-white flex justify-between items-center gap-x-5 px-20'>
         <div className='aboutimg'>
           <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1" alt="" className='w-[220px] rounded-xl' />

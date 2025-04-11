@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './App.css';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -39,11 +39,12 @@ const App = () => {
     });
 
     gsap.to("header" , {
-      backgroundColor: "#000",
       height: "110px",
+      backgroundColor: "#000",
       duration: 1,
       position: "sticky",
       top: 0,
+      left: 0,
       ease: "power4.inOut",
       scrollTrigger:{
         trigger: "header",
@@ -172,11 +173,36 @@ const App = () => {
         scrub: 3,
       }
      })
+     gsap.to("#main", {
+      backgroundColor: "#000",
+      scrollTrigger: {
+          trigger: "#tophead",
+          start: "top  -25%",
+          end: "top -70%",
+          scrub: 2
+  
+      }
+  })
   }, []);
+
+  let cursorref = useRef(null)
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      cursorref.current.style.left = `${e.pageX}px`;
+      cursorref.current.style.top = `${e.pageY}px`;
+    }
+      window.addEventListener("mousemove", mouseMove);
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  },[])
+
   return (
-    <div className='font-montserrat capitalize'>
-      <div className="relative h-screen w-full">
-        <header className='z-10 px-10 gap-x-4 py-4 flex justify-start items-center w-full'>
+    <div className='font-montserrat capitalize' id='main'>
+      <div className=" h-screen w-full" id='tophead'>
+      <video  src="/hero.mp4" autoPlay loop muted playsInline />
+        <header className='sticky top-0 right-0 bottom-0 left-0 z-[100] px-10 gap-x-4 py-4 flex justify-start items-center w-full'>
           <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
           <div id='menu' className='flex gap-x-5 uppercase'>
             <h2 className='text-[16px] cursor-pointer text-white'>TOPTRACER RANGE</h2>
@@ -190,15 +216,16 @@ const App = () => {
         <button className='capitalize bg-black text-white py-2 px-5 rounded-full border-[5px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book golf</button>
         </div>
         </header>
-
-        <video className="absolute top-0 left-0 w-full h-full object-cover z-[-1]" src="/hero.mp4" autoPlay loop muted playsInline />
-        <div className='flex flex-col h-screen justify-start gap-20  items-center'>
+        <div className='flex flex-col h-[100vh] justify-center gap-y-5 pb-10  items-center'>
           <h1 id='custom-stroke'>Eat.Drink.Play.</h1>
           <h2 className='text-[35px] text-white font-semibold'>Welcome to Sidcup Family Golf!</h2>
           <p className='text-xl text-white text-center w-[40%]'>
             Sidcup Family Golf is a Toptracer driving range and crazy golf venue in Sidcup, South East London.
             Passionate about technology, player development, and making golf fun and accessible to everyone.
           </p>
+          <div ref={cursorref} className='fixed top-0 left-0 right-0 bg-[#89B11B] h-6 w-6   rounded-full'>
+
+          </div>
         </div>
       </div>
       <div>
@@ -217,7 +244,6 @@ const App = () => {
           </div>
         </marquee>
       </div>
-
       <div className='h-[70%] aboutspages py-20 text-white flex justify-center items-center gap-x-10 px-10'>
         <div className='aboutimg'>
           <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1" alt="" className='w-[220px] rounded-xl' />
@@ -254,7 +280,7 @@ const App = () => {
          </div>
         </div>
       </div>
-      <div className='h-[200px] bg-[#89B11B]'>
+      <div className='h-[200px]' id='greendiv'>
         <div className='flex h-full justify-between items-center'>
         <img className='h-full' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg" alt=""  />
         <h4 id='sign' className='text-3xl text-center font-semibold font-montserrat w-[50%]'>
@@ -280,7 +306,7 @@ const App = () => {
         <img id='comma2' className='h-[50px] absolute right-[160px] bottom-[-40px]' src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg" alt="" />
       </div>
       <div className='flex justify-center items-center relative py-10'>
-        <h1 id='textls' className='z-[-1] top-[20px]  absolute   text-[65px] font-extrabold  text-center text-black' >WHAT ARE YOU WAITING FOR?</h1>
+        <h1 id='textls' className='top-[20px]  absolute   text-[65px] font-extrabold  text-center' >WHAT ARE YOU WAITING FOR?</h1>
         <div className='px-20 flex justify-center items-center gap-x-20'>
           <div id='lsimg1' className='h-[170px] w-[300px] rounded-xl flex justify-center items-center bg-[#89B11B]'>
            <h1 className='text-3xl font-semibold'>TopRacer Range</h1>
@@ -293,18 +319,18 @@ const App = () => {
           </div>
         </div>
       </div>
-      <footer className='bg-[#89B11B] h-[220px] gap-y-10 flex px-10  justify-center items-center flex-col'>
-       <div className='flex justify-between items-center px-10 w-full'>
-       <div>
-        <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
+      <footer id='greendiv' className='h-[220px] flex justify-center items-center flex-col'>
+       <div className='flex justify-between h-full items-center w-full'>
+       <div id='fotterleftimg' className='h-full py-10 flex justify-center items-center'>
+        <img  src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px] px-20' alt="" />
         </div>
-        <div id='menu' className='flex gap-x-5 uppercase flex-col justify-center items-start '>
+        <div  className='flex gap-x-5 uppercase flex-col justify-center items-start '>
             <h2 className='text-[26px] hover:text-white transition-all ease-in-out  text-black font-extrabold cursor-pointer'>TOPTRACER RANGE</h2>
             <h2 className='text-[26px] hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Crazy Golf</h2>
             <h2 className='text-[26px]  hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer'>Café
             Golf</h2> 
           </div>
-          <div>
+          <div className='px-20 uppercase'>
           <h2 className='text-[26px]  hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Events</h2>
             <h2 className='text-[26px] hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Golf Lessons</h2>
             <h2 className='text-[26px]  hover:text-white transition-all ease-in-out text-black font-extrabold cursor-pointer '>Contact Us</h2>

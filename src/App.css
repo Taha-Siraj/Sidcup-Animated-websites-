@@ -115,5 +115,6 @@ video {
   object-fit: cover;
   z-index: -1;
   position: fixed;
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9);
+  box-shadow: 10px 10px 20px rgba(10, 10, 10, 9.9);
+  
 }

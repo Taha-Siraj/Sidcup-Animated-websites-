@@ -6,7 +6,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 import { IoIosArrowRoundDown  } from "react-icons/io";
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
-
   useGSAP(() => {
     gsap.from(".aboutimg img", {
       opacity: 0,
@@ -108,12 +107,7 @@ const App = () => {
       y: -200,
       duration: 0.4,
      })
-     tl.from("#menu h2", {
-      opacity: 0,
-      stagger: 1,
-      y: -200,
-      duration: 0.5,
-     })
+    
      gsap.from("#btn button", {
       opacity: 0,
       stagger: 1,
@@ -184,7 +178,7 @@ const App = () => {
       }
   })
   }, []);
-  
+
   let cursorref = useRef(null)
   useEffect(() => {
   const elem = document.querySelectorAll("#menu h2");
@@ -218,7 +212,7 @@ const App = () => {
           <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
           <div id='menu' className='flex gap-x-5 uppercase'>
             <h2 className='text-[16px] cursor-pointer  hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>TOPTRACER RANGE</h2>
-            <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>Golf Lessons</h2>
+            <h2 className='text-[16px] cursor-pointer  hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>Golf Lessons</h2>
             <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>Adventure Golf</h2>
             <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>coffee shop</h2>
             <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>leagues</h2>
@@ -353,6 +347,7 @@ const App = () => {
           <p className='text-xl font-light font-mono text-[#353535] text-center'>Copyright © 2025 Taha Siraj. All rights reserved.</p>
       </footer>
     </div>
+
   );
 };
 export default App;

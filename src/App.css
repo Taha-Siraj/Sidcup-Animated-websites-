@@ -6,6 +6,7 @@
 body{
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 body::-webkit-scrollbar{
   scroll-behavior: smooth;
@@ -135,8 +136,6 @@ video {
     0 0 120px rgba(114, 212, 49, 0.6),
     0 0 160px rgba(114, 212, 49, 0.4);
 }
-
-
 #arrow:hover{
   transition: all 0.7s ease-in-out;
 }

@@ -115,6 +115,32 @@ video {
   object-fit: cover;
   z-index: -1;
   position: fixed;
-  box-shadow: 10px 10px 20px rgba(10, 10, 10, 9.9);
+  box-shadow: 30px 30px 30px rgba(10, 10, 10, 9.9);
   
+}
+#cursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #91B508;
+  position: absolute;
+  pointer-events: none;
+  z-index: 9999;
+  transition: all 0.15s ease;
+  mix-blend-mode: lighten;
+
+  box-shadow: 
+    0 0 40px rgba(114, 212, 49, 1),
+    0 0 80px rgba(114, 212, 49, 0.8),
+    0 0 120px rgba(114, 212, 49, 0.6),
+    0 0 160px rgba(114, 212, 49, 0.4);
+}
+
+
+#arrow:hover{
+  transition: all 0.7s ease-in-out;
+}
+button:hover{
+  transition: all 0.5s ease-in-out;
+  transform: scale(2);
 }

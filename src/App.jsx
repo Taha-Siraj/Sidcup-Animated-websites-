@@ -3,7 +3,7 @@ import './App.css';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-
+import { IoIosArrowRoundDown  } from "react-icons/io";
 const App = () => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -41,7 +41,6 @@ const App = () => {
     gsap.to("header" , {
       height: "110px",
       backgroundColor: "#000",
-      color: "#fff",
       duration: 1,
       position: "sticky",
       top: 0,
@@ -185,24 +184,22 @@ const App = () => {
       }
   })
   }, []);
-
+  
   let cursorref = useRef(null)
+  useEffect(() => {
   const elem = document.querySelectorAll("#menu h2");
   elem.forEach((elem) => {
     elem.addEventListener("mouseenter", () => {
-      cursorref.current.style.transform = 'scale(2.5)';
+      cursorref.current.style.transform = 'scale(2.9)';
       cursorref.current.style.border = '2px solid #fff';
       cursorref.current.style.backgroundColor = 'transparent';
-      console.log("hey enter")
     })
     elem.addEventListener("mouseleave", () => {
       cursorref.current.style.transform = 'scale(1)';
       cursorref.current.style.border = 'none';
       cursorref.current.style.backgroundColor = '#91B508';
-      console.log("hey leave ")
     })
   })
-  useEffect(() => {
     const mouseMove = (e) => {
       cursorref.current.style.left = `${e.pageX}px`;
       cursorref.current.style.top = `${e.pageY}px`;
@@ -211,7 +208,7 @@ const App = () => {
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     };
-  },[])
+  },[]);
 
   return (
     <div className='font-montserrat capitalize' id='main'>
@@ -220,11 +217,11 @@ const App = () => {
         <header className='sticky top-0 right-0 bottom-0 left-0 z-[100] px-10 gap-x-4 py-4 flex justify-start items-center w-full'>
           <img id='logo' src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg" className='h-[70px]' alt="" />
           <div id='menu' className='flex gap-x-5 uppercase'>
-            <h2 className='text-[16px] cursor-pointer text-black py-1'>TOPTRACER RANGE</h2>
-            <h2 className='text-[16px] cursor-pointer text-black py-1'>Golf Lessons</h2>
-            <h2 className='text-[16px] cursor-pointer text-black py-1'>Adventure Golf</h2>
-            <h2 className='text-[16px] cursor-pointer text-black py-1'>coffee shop</h2>
-            <h2 className='text-[16px] cursor-pointer text-black py-1'>leagues</h2>
+            <h2 className='text-[16px] cursor-pointer  hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>TOPTRACER RANGE</h2>
+            <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>Golf Lessons</h2>
+            <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>Adventure Golf</h2>
+            <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>coffee shop</h2>
+            <h2 className='text-[16px] cursor-pointer hover:text-black transition-all duration-75 ease-in-out text-white hover:cursor-pointer py-1'>leagues</h2>
           </div>
         <div id='btn' className='flex gap-x-5'>
         <button  className= 'capitalize bg-black text-white py-2 px-5 rounded-full border-[4px] border-[#91B508] font-semibold text-xl hover:bg-[#91B508]'>book range</button>
@@ -239,8 +236,10 @@ const App = () => {
             Passionate about technology, player development, and making golf fun and accessible to everyone.
           </p>
           <div ref={cursorref} id='cursor' className='z-[100] absolute top-0 left-0 right-0 bg-[#89B11B] h-6 w-6   rounded-full'>
-
           </div>
+            <div id='arrow' className=' border-2 border-[#89B11B] font-light absolute left-0 bottom-0 text-white hover:scale-50 transition-all ease-in-out duration-75 hover:bg-[#89B11B] flex justify-center items-center text-8xl  rounded-full text-center'>
+              <IoIosArrowRoundDown />
+            </div>
         </div>
       </div>
       <div>
@@ -312,7 +311,7 @@ const App = () => {
           we have a variety of food and drink options bought directly to your table or bay.
 
           We make sure that we cater for everyone, offering a range of vegan and gluten free options.</p>
-        <button type="button" className='py-2 px-4 capitalize border-4 hover:text-black font-semibold hover:scale-95 hover:bg-[#91B508] border-[#91B508] text-xl rounded-full'>coffee Shop</button>
+        <button type="button" className='py-2 px-4 capitalize border-4 hover:text-black font-semibold hover:scale-95  hover:bg-[#91B508] border-[#91B508] text-xl rounded-full '>coffee Shop</button>
         </div>
       </div>
       <div className='flex justify-center items-center relative h-[400px]'>

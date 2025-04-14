@@ -268,7 +268,7 @@ const App = () => {
           <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1" alt="" className='w-[220px] rounded-xl' />
         </div>
       </div>
-      <div  className='py-8 flex justify-center items-center gap-x-6 px-20'>
+      <div  className='py-8 flex justify-center items-center gap-x-10 px-20'>
         <div id='card' className='h-[370px] w-[330px] text-whit rounded-xl'>
          <div className='flex flex-col gap-y-7 py-10 px-4 justify-center items-center'>
          <h1 className='text-3xl text-black font-semibold font-montserrat opacity-0'>TopRacer Range</h1>
